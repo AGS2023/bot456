@@ -28,8 +28,8 @@ def register():
     print("Registration successful!")
 
 def login():
-    email = input("Enter your email: ")
-    password = getpass.getpass("Enter your password: ")
+    email = "amine@gmail.com"
+    password = "123"
     hashed_password = hashlib.sha256(password.encode()).hexdigest()
     sql = "SELECT * FROM users WHERE email = %s AND password = %s"
     cursor.execute(sql, (email, hashed_password))

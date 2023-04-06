@@ -58,7 +58,18 @@ def update_database(user_email, dangers):
     print("Database updated successfully.")
 
 def main():
-   login()
+    with app.test_request_context():
+        while True:
+            choice = "2"
+            if choice == "1":
+                register()
+            elif choice == "2":
+                login()
+
+            elif choice == "3":
+                break
+            else:
+                print("Invalid choice.")
 
 if __name__ == "__main__":
     main()
